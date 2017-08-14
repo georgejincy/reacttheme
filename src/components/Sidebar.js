@@ -1,4 +1,21 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
+
+const sideNavlinks = [
+  {
+    isExact: true,
+    linkTo: '/',
+    text: 'RingLeader',
+    customClass: 'sideNavHeader'
+  },
+  { isExact: true, linkTo: '/', text: 'Home', customClass: 'sideNavItem' },
+  {
+    isExact: false,
+    linkTo: '/locations',
+    text: 'Locations',
+    customClass: 'sideNavItem'
+  },
+]
 
 class Sidebar extends Component {
   render() {
@@ -16,35 +33,25 @@ class Sidebar extends Component {
 
                 <nav id="menu">
                   <header className="major">
-                    <h2>Menu</h2>
+                    <h2>RingLeader</h2>
                   </header>
                   <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="generic.html">Generic</a></li>
-                    <li><a href="elements.html">Elements</a></li>
-                    <li>
-                      <span className="opener">Submenu</span>
-                      <ul>
-                        <li><a href="#">Lorem Dolor</a></li>
-                        <li><a href="#">Ipsum Adipiscing</a></li>
-                        <li><a href="#">Tempus Magna</a></li>
-                        <li><a href="#">Feugiat Veroeros</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Etiam Dolore</a></li>
-                    <li><a href="#">Adipiscing</a></li>
-                    <li>
-                      <span className="opener">Another Submenu</span>
-                      <ul>
-                        <li><a href="#">Lorem Dolor</a></li>
-                        <li><a href="#">Ipsum Adipiscing</a></li>
-                        <li><a href="#">Tempus Magna</a></li>
-                        <li><a href="#">Feugiat Veroeros</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Maximus Erat</a></li>
-                    <li><a href="#">Sapien Mauris</a></li>
-                    <li><a href="#">Amet Lacinia</a></li>
+                  	      <NavLink
+          activeClassName='active'
+        
+        to='/'
+        >
+        <li>Home</li>
+        </NavLink>
+                     	      <NavLink
+          activeClassName='active'
+        
+        to='/locations'
+        >
+        <li>Locations</li>
+        </NavLink>
+                    
+                    
                   </ul>
                 </nav>
 
